@@ -1,9 +1,35 @@
 <h1>id=<%= @task.id %>のタスク詳細ページ</h1>
-<p>タスクタイトル:<%= @task.title %></p>
-<p>タスク内容:<%= @task.content %></p>
-<p>状態:<%= @task.status %></p>
 
-<%= link_to'タスク一覧',tasks_path%>
-<%= link_to'タスク修正',edit_task_path%>
-<%= link_to'続き登録',new_task_path%>
-<%= link_to'タスク削除',@task,method: :delete,data: {confirm:'削除いいですか？'} %>
+
+<table class="table table-bordered">
+   <tr>
+    <th>id</th>
+    <td>
+<%= @task.id %>
+</td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td>
+<%= @task.title %>
+</td>
+  </tr>
+  <tr>
+    <th>タスク</th>
+    <td>
+<%= @task.content %>
+</td>
+  </tr>
+  <tr>
+    <th>状態</th>
+    <td>
+<%= @task.status %>
+</td>
+  </tr>
+</table>
+
+
+<!--<%= link_to'タスク一覧',tasks_path%>-->
+<%= link_to'タスク修正',edit_task_path,class:"btn btn-success"%>
+<%= link_to'続き登録',new_task_path,class:"btn btn-primary"%>
+<%= link_to'タスク削除',@task,method: :delete,data: {confirm:'削除いいですか？'},class:"btn btn-danger" %>
