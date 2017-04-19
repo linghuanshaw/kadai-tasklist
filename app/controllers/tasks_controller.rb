@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
    def index
-      @tasks=Task.all
+      @tasks=Task.order(created_at: :desc).page(params[:page]).per(10)
    end
    
    def show
@@ -51,7 +51,7 @@ class TasksController < ApplicationController
    private
    
    def task_params
-      params.require(:task).permit(:content)
+      params.require(:task).permit(:content,:title,:status)
    end
    
 end
