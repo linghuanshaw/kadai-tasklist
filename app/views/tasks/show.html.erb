@@ -1,9 +1,8 @@
 <h1>id=<%= @task.id %>のタスク詳細ページ</h1>
 
-
 <table class="table table-bordered">
    <tr>
-    <th>id</th>
+    <th >id</th>
     <td>
 <%= @task.id %>
 </td>
@@ -30,6 +29,16 @@
 
 
 <!--<%= link_to'タスク一覧',tasks_path%>-->
+<%if current_user.id ==@task.user_id %>
+<div class="row">
 <%= link_to'タスク修正',edit_task_path,class:"btn btn-success"%>
 <%= link_to'続き登録',new_task_path,class:"btn btn-primary"%>
 <%= link_to'タスク削除',@task,method: :delete,data: {confirm:'削除いいですか？'},class:"btn btn-danger" %>
+</div>
+
+<%else%>
+<div><%= link_to'Back to homepage',root_path,class:"btn btn-primarys"%></div>
+
+<%end%>
+</div>
+</div>

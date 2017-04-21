@@ -1,0 +1,21 @@
+<% if logged_in? %>
+  <div class="row ">
+    <!--<aside class="col-md-4">-->
+       
+      
+      <%#  <!--<%= render 'tasks/form', task: @task, user: @user %>
+      
+    <!--  <%= link_to 'タスク登録', newtask_path, class: 'btn btn-lg btn-primary' %>-->
+    <!--</aside>-->
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+      <%= render 'tasks/index', tasks: @tasks, user: @user %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>タスク管理アプリ</h1>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>

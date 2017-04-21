@@ -1,3 +1,5 @@
+
+
 <h1>タスク一覧</h1>
 
 <% if @tasks.any? %>
@@ -5,6 +7,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+         <th>id</th>
         <th>タイトル</th>
         <th>タスク</th>
         <th>状態</th>
@@ -15,7 +18,8 @@
    <% @tasks.each do |task|%>
    
    <tr>
-      <td><%= link_to task.title,task%></td>
+      <td><%= link_to task.id,task%></td>
+      <td><%= task.title%></td>
       <td><%= task.content%></td>
       <td><%= task.status%></td>
    </tr>
